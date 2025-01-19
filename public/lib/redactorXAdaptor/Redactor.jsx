@@ -52,43 +52,6 @@ export default function RedactorComponent(
 
     const keyDownHandler = function (event) {
         editorRedactorLogger("keydown 이벤트 발생", event);
-        if (event.params.enter) {
-            const isKor = checkEndCharWithoutFinalConsonant(
-                app.selection.getRange().endContainer.textContent
-            );
-            const noticeHistory = JSON.parse(
-                localStorage.noticeHistory || "{}"
-            );
-            let isIOSEnterProblem =
-                noticeHistory.isIOSEnterProblem === undefined
-                    ? true
-                    : noticeHistory.isIOSEnterProblem;
-            if (isKor && isIOS() && isIOSEnterProblem) {
-                // const message = <>줄바꿈에 문제가 있다면 엔터를 누르기 전에 마침표나 공백을 입력해주세요.<Button onClick={()=>{
-                //   localStorage.noticeHistory= JSON.stringify({...noticeHistory, isIOSEnterProblem: false});
-                //   setSnackbar({...snackbar, message, vertical:'top', horizontal:'center', open: false});
-                // }}>그만보기</Button></>;
-                const message = `<h1>${t("ios-enter-problem-title")}</h1>
-        <p>1. <strong>${t("ios-enter-problem-step1")}</strong></p>
-        <p>2. <strong>${t("ios-enter-problem-step2")}</strong></p>
-        <p>${t("ios-enter-problem-description")}</p>
-        <p><a href="https://youtu.be/BQ20-leF328" target="_blank">${t("ios-enter-problem-video")}</a></p>
-        `;
-                setTimeout(() => {
-                    // openConfirm({
-                    //     message,
-                    //     onNo: () => {
-                    //         localStorage.noticeHistory = JSON.stringify({
-                    //             ...noticeHistory,
-                    //             isIOSEnterProblem: false,
-                    //         });
-                    //     },
-                    //     yesLabel: t("confirm"),
-                    //     noLabel: t("dont-show-again"),
-                    // });
-                }, 10000);
-            }
-        }
     };
 
     useEffect(
@@ -136,99 +99,21 @@ export default function RedactorComponent(
             const Redactor = (
                 await import("../../../public/lib/redactor/src/redactor.js")
             ).default;
-            const dependancy = [
-                import(
-                    "../../../public/lib/redactor/src/plugins/imageresize/imageresize.min.js"
-                ),
-                import(
-                    "../../../public/lib/redactor/src/plugins/fullscreen/fullscreen.min.js"
-                ),
-                import(
-                    "../../../public/lib/redactorXAdaptor/plugins/timestamp/index.js"
-                ),
-                import(
-                    "../../../public/lib/redactorXAdaptor/plugins/counter/counter.js"
-                ),
-                import(
-                    "../../../public/lib/redactorXAdaptor/plugins/toolbarStickyBugFix/toolbarStickyBugFix.js"
-                ),
-                import(
-                    "../../../public/lib/redactorXAdaptor/plugins/addBlockTopBottom/addBlockTopBottom.js"
-                ),
-                import(
-                    "../../../public/lib/redactorXAdaptor/plugins/iosSafariOverflowScrollBugFix/iosSafariOverflowScrollBugFix.js"
-                ),
-            ];
+            const dependancy = [];
             if (locale !== "en") {
                 dependancy.push(
                     import(`../../../public/lib/redactor/${locale}.js`)
                 );
             }
-            const plugins = [
-                "imageposition",
-                "imageresize",
-                "fullscreen",
-                "ai",
-                "timestamp",
-                "counter",
-                "addBlockTopBottom",
-                // "uploadcare",
-                "toolbarStickyBugFix",
-                "iosSafariOverflowScrollBugFix",
-            ];
-            const toolbar = [
-                "add",
-                "ai-tools",
-                "format",
-                "moreinline",
-                "link",
-                "list",
-                "bold",
-
-                "table",
-            ];
-            if (process.env.NODE_ENV === "development") {
-                toolbar.push("html");
-            }
+            const plugins = ["imageposition", "ai"];
+            const toolbar = ["bold"];
             const options = {
-                lang: locale,
                 // theme: localStorage.getItem("darkMode") ? "dark" : "light",
                 plugins,
                 buttons: {
                     toolbar,
                 },
-                popups: {
-                    addbar: [
-                        "ai-tools",
-                        "text",
-                        "heading",
-                        "list",
-                        "embed",
-                        "table",
-                        "quote",
-                        "pre",
-                        "line",
-                        "layout",
-                    ],
-                    format: [
-                        "text",
-                        "h1",
-                        "h2",
-                        "h3",
-                        "quote",
-                        "bulletlist",
-                        "numberedlist",
-                    ],
-                    inline: [
-                        "italic",
-                        "code",
-                        "underline",
-                        "sup",
-                        "sub",
-                        "highlight",
-                        "removeinline",
-                    ],
-                },
+
                 scrollTarget: "#mainScrollPane",
 
                 ai: {
@@ -315,7 +200,7 @@ export default function RedactorComponent(
                     "editor.keydown": keyDownHandler,
                     "editor.change": function (event) {
                         editorRedactorLogger("에디터 내용 변경 발생", event);
-                        onChange(event.params.html);
+                        onChange(event.data.html);
                     },
                     "editor.blur": function () {
                         editorRedactorLogger(

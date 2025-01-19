@@ -9,12 +9,7 @@ export default async function RootLayout({
     return (
         <html className="light" dark-theme="light">
             <head></head>
-            <body>
-                {/* <NextIntlClientProvider messages={messages}> */}
-                {children}
-                {/* <Analytics /> */}
-                {/* </NextIntlClientProvider> */}
-            </body>
+            <body>{children}</body>
         </html>
     );
 }

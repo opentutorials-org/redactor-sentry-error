@@ -1,0 +1,106 @@
+.l10n-ko-KR {
+    --l10n-locale-name: 'ko-KR';
+
+    --l10n-upload-file: '파일 업로드';
+    --l10n-upload-files: '파일들 업로드';
+    --l10n-choose-file: '파일 선택';
+    --l10n-choose-files: '파일들 선택';
+    --l10n-drop-files-here: '여기에 파일을 놓으세요';
+    --l10n-select-file-source: '파일 소스 선택';
+    --l10n-selected: '선택됨';
+    --l10n-upload: '업로드';
+    --l10n-add-more: '더 추가';
+    --l10n-cancel: '취소';
+    --l10n-clear: '지우기';
+    --l10n-camera-shot: '촬영';
+    --l10n-upload-url: '가져오기';
+    --l10n-upload-url-placeholder: '여기에 링크 붙여넣기';
+    --l10n-edit-image: '이미지 편집';
+    --l10n-edit-detail: '세부사항';
+    --l10n-back: '뒤로';
+    --l10n-done: '완료';
+    --l10n-ok: '확인';
+    --l10n-remove-from-list: '목록에서 제거';
+    --l10n-no: '아니오';
+    --l10n-yes: '예';
+    --l10n-confirm-your-action: '액션을 확인하세요';
+    --l10n-are-you-sure: '확실해요?';
+    --l10n-selected-count: '선택된 수:';
+    --l10n-upload-error: '업로드 오류';
+    --l10n-validation-error: '검증 오류';
+    --l10n-no-files: '선택된 파일 없음';
+    --l10n-browse: '찾아보기';
+    --l10n-not-uploaded-yet: '아직 업로드되지 않음...';
+    --l10n-file__one: '파일';
+    --l10n-file__other: '파일들';
+    --l10n-error__one: '오류';
+    --l10n-error__other: '오류들';
+    --l10n-header-uploading: '업로딩 중 {{count}} {{plural:file(count)}}';
+    --l10n-header-failed: '{{count}} {{plural:error(count)}}';
+    --l10n-header-succeed: '{{count}} {{plural:file(count)}} 업로드됨';
+    --l10n-header-total: '{{count}} {{plural:file(count)}} 선택됨';
+
+    --l10n-src-type-local: '장치';
+    --l10n-src-type-from-url: '링크';
+    --l10n-src-type-camera: '카메라';
+    --l10n-src-type-draw: '그리기';
+    --l10n-src-type-facebook: 'Facebook';
+    --l10n-src-type-dropbox: 'Dropbox';
+    --l10n-src-type-gdrive: 'Google Drive';
+    --l10n-src-type-gphotos: 'Google Photos';
+    --l10n-src-type-instagram: 'Instagram';
+    --l10n-src-type-flickr: 'Flickr';
+    --l10n-src-type-vk: 'VK';
+    --l10n-src-type-evernote: 'Evernote';
+    --l10n-src-type-box: 'Box';
+    --l10n-src-type-onedrive: 'Onedrive';
+    --l10n-src-type-huddle: 'Huddle';
+    --l10n-src-type-other: '기타';
+
+    --l10n-src-type: var(--l10n-src-type-local);
+
+    --l10n-caption-from-url: '링크에서 가져오기';
+    --l10n-caption-camera: '카메라';
+    --l10n-caption-draw: '그리기';
+    --l10n-caption-edit-file: '파일 편집';
+
+    --l10n-file-no-name: '이름 없음...';
+
+    --l10n-toggle-fullscreen: '전체 화면 전환';
+    --l10n-toggle-guides: '가이드 전환';
+    --l10n-rotate: '회전';
+    --l10n-flip-vertical: '수직 뒤집기';
+    --l10n-flip-horizontal: '수평 뒤집기';
+    --l10n-brightness: '밝기';
+    --l10n-contrast: '대비';
+    --l10n-saturation: '채도';
+    --l10n-resize: '이미지 크기 조절';
+    --l10n-crop: '자르기';
+    --l10n-select-color: '색상 선택';
+    --l10n-text: '텍스트';
+    --l10n-draw: '그리기';
+    --l10n-cancel-edit: '편집 취소';
+
+    --l10n-tab-view: '미리보기';
+    --l10n-tab-details: '세부사항';
+
+    --l10n-file-name: '이름';
+    --l10n-file-size: '크기';
+    --l10n-cdn-url: 'CDN URL';
+    --l10n-file-size-unknown: '알 수 없음';
+
+    --l10n-camera-permissions-denied: '카메라 접근 거부됨';
+    --l10n-camera-permissions-prompt: '카메라 접근을 허용해주세요';
+    --l10n-camera-permissions-request: '접근 요청';
+
+    --l10n-files-count-limit-error-title: '파일 수 제한 초과';
+    --l10n-files-count-limit-error-too-few: '{{total}}을(를) 선택했습니다. 최소 {{min}} 필요합니다.';
+    --l10n-files-count-limit-error-too-many: '파일을 너무 많이 선택했습니다. {{max}}이(가) 최대입니다.';
+    --l10n-files-count-minimum: '최소 {{count}} 파일이 필요합니다';
+    --l10n-files-count-allowed: '오직 {{count}} 파일만 허용됩니다';
+
+    --l10n-files-max-size-limit-error: '파일이 너무 큽니다. 최대 파일 크기는 {{maxFileSize}}입니다.';
+    --l10n-has-validation-errors: '파일 검증 오류가 발생했습니다. 업로드 전에 파일을 확인하세요.';
+    --l10n-images-only-accepted: '이미지 파일만 허용됩니다.';
+    --l10n-file-type-not-allowed: '이러한 파일 유형의 업로드는 허용되지 않습니다.';
+}

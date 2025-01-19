@@ -1,0 +1,207 @@
+.rx-editor ul {
+    list-style-type: disc !important;
+}
+
+.rx-editor ol {
+    list-style-type: decimal !important;
+}
+
+.rx-modal .rx-form-input,
+.rx-ai-textarea,
+.rx-form-textarea {
+    font-size: 1rem;
+}
+
+.rx-dropdown-ai-tools,
+.rx-dropdown-hotkeys,
+.rx-dropdown-type-formatbar,
+.rx-dropdown-control,
+.rx-dropdown-addbar,
+.rx-modal {
+    z-index: 10000;
+}
+.rx-form-button {
+    opacity: 0.7;
+    background-color: inherit !important;
+    border-color: var(--border-color) !important;
+}
+.rx-form-button:hover {
+    opacity: 1;
+}
+
+.rx-form-button-primary {
+    display: block !important;
+    min-width: 5rem !important;
+    text-align: center !important;
+    background-color: var(--focus-bg-color) !important;
+    color: var(--text-color) !important;
+}
+.rx-form-button-danger {
+}
+
+@media only screen and (max-width: 768px) {
+    body > div.rx-dropdown.rx-dropdown-control {
+        position: fixed;
+        top: 50% !important;
+        transform: translate(0, -50%) !important;
+    }
+}
+
+[rx-modal-name='cell-setting'] [name='nowrap'],
+[rx-modal-name='cell-setting'] [name='nowrap'] + span {
+    display: none !important;
+}
+
+.rx-content.rx-editor {
+    padding-top: 2.5rem !important;
+    padding-bottom: 6rem !important;
+}
+
+.rx-editor.rx-reset.rx-content,
+.rx-content * {
+    color: var(--text-color) !important;
+}
+
+.rx-container {
+    border: none !important;
+    background-color: var(--bg-color) !important;
+}
+
+@media only screen and (max-width: 640px) {
+    .rx-editor-container {
+        padding-left: 8px;
+    }
+}
+
+.rx-toolbox-container,
+.rx-content,
+.rx-dropdown,
+.rx-modal,
+.rx-ai-main,
+.rx-form-select,
+.rx-dropdown-items *,
+.rx-button-title {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+}
+
+.rx-button-title {
+    background-color: inherit !important;
+}
+
+.rx-button-icon svg {
+    fill: var(--text-color);
+}
+
+.rx-container svg * {
+    fill: var(--text-color);
+}
+
+.rx-modal input,
+.rx-control .rx-button,
+.rx-source {
+    background-color: var(--focus-bg-color);
+    color: var(--text-color);
+}
+
+.rx-dropdown .rx-button:hover,
+.rx-form-upload-box,
+.rx-form-textarea {
+    background-color: var(--focus-bg-color);
+}
+
+.rx-editor .rx-block-control-focus.rx-block-focus {
+    outline-color: var(--border-color) !important;
+}
+
+.rx-control .rx-button {
+    margin-top: 2px;
+}
+
+.rx-statusbar {
+    opacity: 0.5;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    background-color: inherit;
+}
+.rx-statusbar * {
+    color: var(--text-color) !important;
+}
+@media only screen and (max-width: 640px) {
+    .rx-statusbar {
+        padding-left: 33px;
+    }
+}
+
+.rx-statusbar:hover {
+    opacity: 0.9;
+}
+
+#editor_root_wapper_spacer {
+    padding-bottom: 8px;
+}
+
+.rx-editor .download a {
+    display: block;
+    position: relative;
+    padding: 1rem;
+    padding-left: 3.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    text-decoration: none;
+    color: var(--text-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.8rem;
+}
+
+.rx-editor .download a::before {
+    --icon-size: 1.3rem;
+    --icon-color: var(--text-color);
+    --icon-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='size-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3' /%3E%3C/svg%3E%0A");
+
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--icon-color);
+    -webkit-mask-image: var(--icon-url);
+    mask-image: var(--icon-url);
+    mask-size: var(--icon-size);
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+.rx-editor .download a:hover {
+    background-color: var(--focus-bg-color);
+}
+
+.rx-editor a {
+    text-decoration: underline;
+}
+.rx-editor .message-container {
+    padding: 1rem 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px dotted var(--border-color);
+}
+
+.rx-editor .message-container .name {
+    background-color: var(--text-color);
+    color: var(--inverted-text-color) !important;
+    padding: 3px 9px;
+    margin-right: 0.5rem;
+    border-radius: 16px;
+    display: block;
+    width: fit-content;
+    font-size: 11px;
+    opacity: 0.3;
+}
+
+.rx-toolbar-container {
+    background-color: var(--bg-color);
+    z-index: 1;
+}
